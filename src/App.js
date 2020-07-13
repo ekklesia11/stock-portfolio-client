@@ -6,8 +6,7 @@ function App() {
   const [shareInfo, setShareInfo] = React.useState({});
 
   const getInfo = async () => {
-    const body = await axios.post("http://localhost:5000", { code: code });
-    console.log(body);
+    const body = await axios.get(`http://localhost:5000?code=${code}`);
     setShareInfo({ ...body.data });
   };
 
