@@ -2,17 +2,27 @@ import React from "react";
 import axios from "axios";
 
 function App() {
-  const [code, setCode] = React.useState("");
-  const [shareInfo, setShareInfo] = React.useState({});
+  // const [code, setCode] = React.useState("");
+  // const [shareInfo, setShareInfo] = React.useState({});
+  const [stockList, setStockList] = React.useState([]);
 
-  const getInfo = async () => {
-    const body = await axios.get(`http://localhost:5000?code=${code}`);
-    setShareInfo({ ...body.data });
+  // const getInfo = async () => {
+  //   const body = await axios.get(`http://localhost:5000?code=${code}`);
+  //   setShareInfo({ ...body.data });
+  // };
+
+  React.useEffect(() => {
+    getStockList();
+  }, []);
+
+  const getStockList = async () => {
+    const body = await axios.get("http://localhost:5000/code");
+    setStockList([...body.data]);
   };
 
   return (
     <div>
-      <input
+      {/* <input
         type="text"
         value={code}
         onChange={(e) => setCode(e.target.value)}
@@ -26,7 +36,14 @@ function App() {
         <div>
           금일시작가: {shareInfo.StartJuka ? shareInfo.StartJuka : null}
         </div>
-      </div>
+      </div> */}
+      <select>
+        {stockList.map((v) => (
+          <option key={v.code}>
+            {v.name}: {v.code}
+          </option>
+        ))}
+      </select>
     </div>
   );
 }
