@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "@material-ui/core/Button";
 
 const Login = () => {
   return (
@@ -12,8 +13,10 @@ const Login = () => {
         <input type="text" />
       </div>
       <div>
-        <button>sign in</button>
-        <button>sign up</button>
+        <Button variant="contained" color="primary">
+          sign in
+        </Button>
+        <Button color="primary">sign up</Button>
       </div>
     </div>
   );
