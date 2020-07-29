@@ -1,17 +1,20 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
+import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
   topRoot: {
     flexGrow: 1,
   },
   paper: {
-    padding: theme.spacing(2),
+    paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(2),
+    paddingLeft: theme.spacing(1),
     textAlign: "left",
     color: theme.palette.text.primary,
   },
@@ -22,17 +25,17 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(0),
   },
   eachMenu: {
-    paddingTop: theme.spacing(2),
-    paddingBottom: theme.spacing(2),
-    paddingRight: theme.spacing(1),
-    paddingLeft: theme.spacing(1),
+    padding: theme.spacing(2),
     textAlign: "center",
   },
 }));
 
-function ListItemLink(props) {
-  return <ListItem button component="a" {...props} />;
-}
+const LogoButton = withStyles((theme) => ({
+  root: {
+    color: "#30c39e",
+    marginRight: theme.spacing(1),
+  },
+}))(Button);
 
 const Layout = (props) => {
   const classes = useStyles();
@@ -43,6 +46,7 @@ const Layout = (props) => {
       <Grid container spacing={0}>
         <Grid item xs={12}>
           <Paper className={classes.paper} elevation={0} square>
+            <LogoButton color="primary">가치투자킹</LogoButton>
             마스터님, 환영합니다.
           </Paper>
         </Grid>
@@ -62,9 +66,9 @@ const Layout = (props) => {
               <ListItem className={classes.eachMenu} button>
                 <ListItemText primary="업종별" />
               </ListItem>
-              <ListItemLink className={classes.eachMenu} href="#simple-list">
+              <ListItem className={classes.eachMenu} button>
                 <ListItemText primary="+" />
-              </ListItemLink>
+              </ListItem>
             </List>
           </div>
         </Grid>
