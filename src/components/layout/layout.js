@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
   eachMenu: {
     padding: theme.spacing(2),
     textAlign: "center",
+    color: "#fff",
   },
 }));
 
@@ -40,7 +41,25 @@ const LogoButton = withStyles((theme) => ({
 const Layout = (props) => {
   const classes = useStyles();
 
-  console.log(props);
+  const sideMenus = [
+    {
+      title: "자산종합",
+      link: "",
+    },
+    {
+      title: "주식상세",
+      link: "",
+    },
+    {
+      title: "업종별",
+      link: "",
+    },
+    {
+      title: "+",
+      link: "",
+    },
+  ];
+
   return (
     <div className={classes.topRoot}>
       <Grid container spacing={0}>
@@ -57,18 +76,11 @@ const Layout = (props) => {
               component="nav"
               aria-label="menu"
             >
-              <ListItem className={classes.eachMenu} button>
-                <ListItemText primary="자산종합" />
-              </ListItem>
-              <ListItem className={classes.eachMenu} button>
-                <ListItemText primary="주식상세" />
-              </ListItem>
-              <ListItem className={classes.eachMenu} button>
-                <ListItemText primary="업종별" />
-              </ListItem>
-              <ListItem className={classes.eachMenu} button>
-                <ListItemText primary="+" />
-              </ListItem>
+              {sideMenus.map((menu, i) => (
+                <ListItem key={i} className={classes.eachMenu} button>
+                  <ListItemText primary={menu.title} />
+                </ListItem>
+              ))}
             </List>
           </div>
         </Grid>
