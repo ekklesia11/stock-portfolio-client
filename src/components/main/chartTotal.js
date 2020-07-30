@@ -1,12 +1,23 @@
 import React from "react";
+import styled from "styled-components";
 
 import PieDiagram from "./pieDiagram";
+import BarDiagram from "./barDiagram";
+
+const ChartLayout = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
 const ChartTotal = () => {
   return (
-    <div>
+    <ChartLayout>
       <PieDiagram />
-    </div>
+      <div>
+        <BarDiagram />
+        <BarDiagram />
+      </div>
+    </ChartLayout>
   );
 };
 
