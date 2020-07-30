@@ -1,11 +1,11 @@
 import React from "react";
-import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Button from "@material-ui/core/Button";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   topRoot: {
@@ -14,12 +14,13 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
-    paddingLeft: theme.spacing(1),
+    paddingLeft: theme.spacing(3),
     textAlign: "left",
     color: theme.palette.text.primary,
   },
   sideRoot: {
     backgroundColor: "#30c39e",
+    height: "calc(100vh - 68px)",
   },
   menuList: {
     padding: theme.spacing(0),
@@ -34,7 +35,8 @@ const useStyles = makeStyles((theme) => ({
 const LogoButton = withStyles((theme) => ({
   root: {
     color: "#30c39e",
-    marginRight: theme.spacing(1),
+    marginRight: theme.spacing(3),
+    fontSize: 24,
   },
 }))(Button);
 
@@ -69,7 +71,7 @@ const Layout = (props) => {
             마스터님, 환영합니다.
           </Paper>
         </Grid>
-        <Grid item xs="auto">
+        <Grid item xs={1}>
           <div className={classes.sideRoot}>
             <List
               className={classes.menuList}
@@ -84,7 +86,7 @@ const Layout = (props) => {
             </List>
           </div>
         </Grid>
-        <Grid item xs="auto">
+        <Grid item xs={11} className={classes.main}>
           {props.children}
         </Grid>
       </Grid>

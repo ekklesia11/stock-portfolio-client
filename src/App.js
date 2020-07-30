@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { createGlobalStyle } from "styled-components";
 
 import CurStock from "./components/temp/curStock";
@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle({
     backgroundColor: "#f3f4f7",
     padding: 0,
     margin: 0,
+    fontFamily: "Roboto",
   },
 });
 
@@ -19,19 +20,19 @@ function App() {
   return (
     <Router>
       <GlobalStyle />
-      <Switch>
-        <Route exact path="/">
-          <Layout>
+      <Layout>
+        <Switch>
+          <Route exact path="/">
             <Main />
-          </Layout>
-        </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route path="/search">
-          <CurStock />
-        </Route>
-      </Switch>
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/search">
+            <CurStock />
+          </Route>
+        </Switch>
+      </Layout>
     </Router>
   );
 }
