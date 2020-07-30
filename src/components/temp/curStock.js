@@ -8,7 +8,7 @@ function CurStock() {
   const [selectedStock, setSelectedStock] = React.useState("");
 
   React.useEffect(() => {
-    getStockList();
+    // getStockList();
   }, []);
 
   const getStockList = async () => {
