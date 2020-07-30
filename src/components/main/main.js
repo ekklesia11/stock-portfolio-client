@@ -1,12 +1,13 @@
 import React from "react";
 
+import CashTotal from "./cashTotal";
+import StockTotal from "./stockTotal";
+
 const Main = () => {
   return (
     <div>
-      <ul>
-        <li>첫 페이지</li>
-        <li>종합 통계</li>
-      </ul>
+      <CashTotal />
+      <StockTotal />
     </div>
   );
 };
