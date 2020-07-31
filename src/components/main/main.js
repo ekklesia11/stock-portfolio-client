@@ -3,6 +3,7 @@ import React from "react";
 import CashTotal from "./cashTotal";
 import StockTotal from "./stockTotal";
 import ChartTotal from "./chartTotal";
+import StockTable from "./stockTable";
 
 const Main = () => {
   return (
@@ -10,6 +11,7 @@ const Main = () => {
       <CashTotal />
       <StockTotal />
       <ChartTotal />
+      <StockTable />
     </div>
   );
 };

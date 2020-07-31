@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
   sideRoot: {
     backgroundColor: "#30c39e",
-    height: "calc(100vh - 68px)",
+    height: "100vh",
   },
   menuList: {
     padding: theme.spacing(0),
