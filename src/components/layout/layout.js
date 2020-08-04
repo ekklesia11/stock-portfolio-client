@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
   sideRoot: {
     backgroundColor: "#30c39e",
-    height: "100vh",
+    height: "100%",
   },
   menuList: {
     padding: theme.spacing(0),
@@ -40,21 +40,27 @@ const LogoButton = withStyles((theme) => ({
   },
 }))(Button);
 
+const homeLink = () => {
+  window.location.href = "/";
+};
+
+const ListItemLink = (props) => <ListItem button component="a" {...props} />;
+
 const Layout = (props) => {
   const classes = useStyles();
 
   const sideMenus = [
     {
       title: "자산종합",
-      link: "",
+      link: "/summary",
     },
     {
       title: "주식상세",
-      link: "",
+      link: "/detail",
     },
     {
       title: "업종별",
-      link: "",
+      link: "class",
     },
     {
       title: "+",
@@ -67,7 +73,9 @@ const Layout = (props) => {
       <Grid container spacing={0}>
         <Grid item xs={12}>
           <Paper className={classes.paper} elevation={0} square>
-            <LogoButton color="primary">가치투자킹</LogoButton>
+            <LogoButton color="primary" onClick={homeLink}>
+              가치투자킹
+            </LogoButton>
             마스터님, 환영합니다.
           </Paper>
         </Grid>
@@ -79,9 +87,13 @@ const Layout = (props) => {
               aria-label="menu"
             >
               {sideMenus.map((menu, i) => (
-                <ListItem key={i} className={classes.eachMenu} button>
+                <ListItemLink
+                  key={i}
+                  className={classes.eachMenu}
+                  href={menu.link}
+                >
                   <ListItemText primary={menu.title} />
-                </ListItem>
+                </ListItemLink>
               ))}
             </List>
           </div>
