@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import List from "@material-ui/core/List";
@@ -45,6 +46,14 @@ const homeLink = () => {
 };
 
 const ListItemLink = (props) => <ListItem button component="a" {...props} />;
+
+const Footer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+`;
 
 const Layout = (props) => {
   const classes = useStyles();
@@ -102,6 +111,7 @@ const Layout = (props) => {
           {props.children}
         </Grid>
       </Grid>
+      <Footer>copyright 가치투자킹 @ 2020</Footer>
     </div>
   );
 };
