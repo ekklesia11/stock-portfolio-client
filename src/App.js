@@ -6,6 +6,8 @@ import CurStock from "./components/temp/curStock";
 import Login from "./components/login/login";
 import Layout from "./components/layout/layout";
 import Main from "./components/main/main";
+import Detail from "./components/detail/detail";
+import Classes from "./components/classes/classes";
 
 const GlobalStyle = createGlobalStyle({
   body: {
@@ -29,10 +31,10 @@ function App() {
             <Main />
           </Route>
           <Route path="/detail">
-            <Main />
+            <Detail />
           </Route>
           <Route path="/class">
-            <Main />
+            <Classes />
           </Route>
           <Route path="/login">
             <Login />
