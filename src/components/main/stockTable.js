@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -44,8 +44,7 @@ const createData = (
 };
 
 const StockTable = () => {
-  const classes = useStyles();
-  const rows = [
+  const [stocks, setStocks] = useState([
     createData(
       "반도체",
       "삼성전자",
@@ -70,7 +69,45 @@ const StockTable = () => {
       0.1,
       "NH투자증권"
     ),
-  ];
+    createData(
+      "바이오",
+      "LG화학",
+      3,
+      510000,
+      570000,
+      14.5,
+      180000,
+      500,
+      0.1,
+      "NH투자증권"
+    ),
+    createData(
+      "바이오",
+      "LG화학",
+      3,
+      510000,
+      570000,
+      14.5,
+      180000,
+      500,
+      0.1,
+      "NH투자증권"
+    ),
+    createData(
+      "바이오",
+      "LG화학",
+      3,
+      510000,
+      570000,
+      14.5,
+      180000,
+      500,
+      0.1,
+      "NH투자증권"
+    ),
+  ]);
+
+  const classes = useStyles();
 
   return (
     <div className={classes.container}>
@@ -91,7 +128,7 @@ const StockTable = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.map((row) => (
+            {stocks.map((row) => (
               <TableRow key={row.name}>
                 <TableCell component="th" scope="row">
                   {row.sector}
