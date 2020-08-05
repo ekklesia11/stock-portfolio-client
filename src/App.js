@@ -8,6 +8,7 @@ import Layout from "./components/layout/layout";
 import Main from "./components/main/main";
 import Detail from "./components/detail/detail";
 import Classes from "./components/classes/classes";
+import Valuation from "./components/valuation/valuation";
 
 const GlobalStyle = createGlobalStyle({
   body: {
@@ -35,6 +36,9 @@ function App() {
           </Route>
           <Route path="/class">
             <Classes />
+          </Route>
+          <Route path="/valuation">
+            <Valuation />
           </Route>
           <Route path="/login">
             <Login />

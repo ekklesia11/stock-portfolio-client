@@ -69,7 +69,11 @@ const Layout = (props) => {
     },
     {
       title: "업종별",
-      link: "class",
+      link: "/class",
+    },
+    {
+      title: "적정주가 계산기",
+      link: "/valuation",
     },
     {
       title: "+",
