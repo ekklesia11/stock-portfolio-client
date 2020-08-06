@@ -115,7 +115,7 @@ const Layout = (props) => {
           {props.children}
         </Grid>
       </Grid>
-      <Footer>copyright 가치투자킹 @ 2020</Footer>
+      <Footer>© 가치투자킹</Footer>
     </div>
   );
 };
