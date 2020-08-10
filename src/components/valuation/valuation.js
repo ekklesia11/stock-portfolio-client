@@ -3,7 +3,8 @@ import React, { useState, useEffect } from "react";
 // EPS * avg PER(5 years)
 // BPS * avg PBR(5 years)
 // EPS * ROE(percentage)
-import PerBase from "./perBase";
+// import PerBase from "./perBase";
+import PerBase from "./container";
 import PbrBase from "./pbrBase";
 import RoeBase from "./roeBase";
 

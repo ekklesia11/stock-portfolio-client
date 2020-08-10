@@ -1,7 +1,7 @@
 import { setEPS, addPER, SET_EPS, ADD_PER, RESET_PER } from "./actions";
 
 const initialState = {
-  EPS: 0,
+  EPS: "",
   PER: [],
 };
 
@@ -12,7 +12,7 @@ const stockApp = (state = initialState, action) => {
     case ADD_PER:
       return { ...state, PER: [...state.PER, action.payload] };
     case RESET_PER:
-      return { EPS: 0, PER: [] };
+      return { EPS: "", PER: [] };
     default:
       return state;
   }
