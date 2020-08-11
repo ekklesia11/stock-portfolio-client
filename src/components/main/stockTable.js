@@ -128,8 +128,8 @@ const StockTable = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {stocks.map((row) => (
-              <TableRow key={row.name}>
+            {stocks.map((row, i) => (
+              <TableRow key={i}>
                 <TableCell component="th" scope="row">
                   {row.sector}
                 </TableCell>
