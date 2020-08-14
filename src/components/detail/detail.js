@@ -24,9 +24,21 @@ const createData = (
   purchasedPrice,
   currentPrice,
   profitRate,
+  totalPurchasedPrice,
+  totalSellingPrice,
   profit,
   dividend,
-  dividendRate,
+  marketCap,
+  totalAsset,
+  totalLiability,
+  totalEquity,
+  liabilityRate,
+  ROE,
+  ROA,
+  EPS,
+  PER,
+  BPS,
+  PBR,
   tradingCompany
 ) => {
   return {
@@ -36,9 +48,21 @@ const createData = (
     purchasedPrice,
     currentPrice,
     profitRate,
+    totalPurchasedPrice,
+    totalSellingPrice,
     profit,
     dividend,
-    dividendRate,
+    marketCap,
+    totalAsset,
+    totalLiability,
+    totalEquity,
+    liabilityRate,
+    ROE,
+    ROA,
+    EPS,
+    PER,
+    BPS,
+    PBR,
     tradingCompany,
   };
 };
@@ -52,57 +76,21 @@ const Detail = () => {
       54000,
       60000,
       5.0,
+      216000,
+      240000,
       24000,
-      300,
-      0.1,
-      "NH투자증권"
-    ),
-    createData(
-      "바이오",
-      "LG화학",
-      3,
-      510000,
-      570000,
-      14.5,
-      180000,
-      500,
-      0.1,
-      "NH투자증권"
-    ),
-    createData(
-      "바이오",
-      "LG화학",
-      3,
-      510000,
-      570000,
-      14.5,
-      180000,
-      500,
-      0.1,
-      "NH투자증권"
-    ),
-    createData(
-      "바이오",
-      "LG화학",
-      3,
-      510000,
-      570000,
-      14.5,
-      180000,
-      500,
-      0.1,
-      "NH투자증권"
-    ),
-    createData(
-      "바이오",
-      "LG화학",
-      3,
-      510000,
-      570000,
-      14.5,
-      180000,
-      500,
-      0.1,
+      352,
+      "350조 2000억",
+      100000,
+      8000,
+      992000,
+      0.9,
+      10,
+      10,
+      5000,
+      2000,
+      20,
+      20,
       "NH투자증권"
     ),
   ]);
@@ -118,13 +106,25 @@ const Detail = () => {
               <TableCell>업종</TableCell>
               <TableCell align="right">종목명</TableCell>
               <TableCell align="right">보유량</TableCell>
-              <TableCell align="right">주당 매입가</TableCell>
-              <TableCell align="right">주당 현재가</TableCell>
-              <TableCell align="right">수익률</TableCell>
+              <TableCell align="right">매입가(원)</TableCell>
+              <TableCell align="right">현재가</TableCell>
+              <TableCell align="right">수익률(%)</TableCell>
+              <TableCell align="right">총 매입가(원)</TableCell>
+              <TableCell align="right">총 매도가</TableCell>
               <TableCell align="right">평가손익</TableCell>
-              <TableCell align="right">주당 배당률</TableCell>
-              <TableCell align="right">배당수익률</TableCell>
-              <TableCell align="right">거래증권사</TableCell>
+              <TableCell align="right">배당금</TableCell>
+              <TableCell align="right">시가총액</TableCell>
+              <TableCell align="right">자산총액(억원)</TableCell>
+              <TableCell align="right">부채총액</TableCell>
+              <TableCell align="right">자본총액</TableCell>
+              <TableCell align="right">부채율(%)</TableCell>
+              <TableCell align="right">ROE</TableCell>
+              <TableCell align="right">ROA</TableCell>
+              <TableCell align="right">EPS(원)</TableCell>
+              <TableCell align="right">BPS</TableCell>
+              <TableCell align="right">PER(배)</TableCell>
+              <TableCell align="right">PBR</TableCell>
+              <TableCell align="right">거래증권</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -138,9 +138,21 @@ const Detail = () => {
                 <TableCell align="right">{row.purchasedPrice}</TableCell>
                 <TableCell align="right">{row.currentPrice}</TableCell>
                 <TableCell align="right">{row.profitRate}</TableCell>
+                <TableCell align="right">{row.totalPurchasedPrice}</TableCell>
+                <TableCell align="right">{row.totalSellingPrice}</TableCell>
                 <TableCell align="right">{row.profit}</TableCell>
                 <TableCell align="right">{row.dividend}</TableCell>
-                <TableCell align="right">{row.dividendRate}</TableCell>
+                <TableCell align="right">{row.marketCap}</TableCell>
+                <TableCell align="right">{row.totalAsset}</TableCell>
+                <TableCell align="right">{row.totalLiability}</TableCell>
+                <TableCell align="right">{row.totalEquity}</TableCell>
+                <TableCell align="right">{row.liabilityRate}</TableCell>
+                <TableCell align="right">{row.ROE}</TableCell>
+                <TableCell align="right">{row.ROA}</TableCell>
+                <TableCell align="right">{row.EPS}</TableCell>
+                <TableCell align="right">{row.PER}</TableCell>
+                <TableCell align="right">{row.BPS}</TableCell>
+                <TableCell align="right">{row.PBR}</TableCell>
                 <TableCell align="right">{row.tradingCompany}</TableCell>
               </TableRow>
             ))}
