@@ -11,7 +11,6 @@ const Main = () => {
       <CashTotal />
       <StockTotal />
       <ChartTotal />
-      <StockTable />
     </div>
   );
 };
